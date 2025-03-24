@@ -1,0 +1,101 @@
+$(document).ready(function(){
+  var spins = 0,
+      $message = $('<div id=\'message\'/>'),
+      $taco = $('#taco'),
+      $body = $('body'),
+      realTaco = '/assets/img/taco.jpg',
+      iconTaco = '/assets/img/simple-taco.gif',
+      degree = 0,
+      intervalSpeed = 40,
+      browserType =  navigator.userAgent.match(/webkit/i),
+      timer;
+
+
+  function spin() {
+    timer = setInterval(
+      function() {
+
+        /*if(browserType != null) {*/
+          degree += 10;
+          if (degree === 360) {
+            $taco.animate({rotate: '0deg'}, 0);
+          } else {
+            var rotate = 'rotate(' + degree + 'deg)';
+            $taco.css({
+                '-webkit-transform': rotate,
+                '-moz-transform': rotate,
+                '-o-transform': rotate,
+                '-ms-transform': rotate,
+                'transform': rotate
+            });
+          }
+        /*} else {
+          degree += 2;
+          rotate($taco, degree);
+        }*/
+
+        if(degree > 360){
+          $('#spins').show();
+          degree = 0;
+          spins++;
+          $('#spins').html(spins);
+        }
+        if(spins === 10){
+          $message.html('You really like tacos!');
+          $body.append($message);
+          $message.fadeIn('slow');
+        }
+        if(spins === 20){
+          $message.html('Holy spinning taco!');
+          $body.append($message);
+        }
+        if(spins === 30){
+          $message.fadeOut('slow');
+        }
+        if(spins === 100){
+          $message.html('One hundred spins! You don\'t fool around.');
+          $body.append($message);
+          $message.fadeIn('slow');
+        }
+        if(spins === 120){
+          $message.fadeOut('slow');
+        }
+        if(spins === 10000){
+          $message.html('Uhhh... taco spin master?');
+          $body.append($message);
+          $message.fadeIn('slow');
+        }
+        if(spins === 100000){
+          $message.html('Nobody likes tacos more than you.');
+          $body.append($message);
+        }
+        if(spins === 1000000){
+          $message.html('Time for you to open a taco shop.');
+          $body.append($message);
+        }
+      },
+    intervalSpeed);
+  }
+
+  function rotate(object, degrees) {
+    object.css({
+      '-webkit-transform' : 'rotate('+degrees+'deg)',
+      '-moz-transform' : 'rotate('+degrees+'deg)',
+      '-ms-transform' : 'rotate('+degrees+'deg)',
+      '-o-transform' : 'rotate('+degrees+'deg)',
+      'transform' : 'rotate('+degrees+'deg)',
+      'zoom' : 1
+    });
+  }
+
+  $taco.dblclick(function(){
+    var currentTaco = $(this).find('img').attr('src');
+    if (currentTaco === realTaco) {
+      $(this).find('img').attr('src', iconTaco);
+    } else {
+      $(this).find('img').attr('src', realTaco);
+    }
+  });
+
+  spin();
+});
