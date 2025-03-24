@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Infinite Clicker</title>
+    <style>
+      
+      html {
+  --s: 50px; /* control the size*/
+  --c1: #96d35f;
+  --c2: #4e7a27;
+  
+  --_g1: 
+    var(--c1)   calc(25%/3) ,#0000 0 calc(50%/3),
+    var(--c1) 0 25%         ,#0000 0 75%,
+    var(--c1) 0 calc(250%/3),#0000 0 calc(275%/3),
+    var(--c1) 0;
+  --_g2: 
+    #0000   calc(25%/3) ,var(--c1) 0 calc(50%/3),
+    #0000 0 calc(250%/3),var(--c1) 0 calc(275%/3),
+    #0000 0;
+  background:
+    linear-gradient( 45deg,var(--_g2)),linear-gradient( 45deg,var(--_g1)),
+    linear-gradient(-45deg,var(--_g2)),linear-gradient(-45deg,var(--_g1))
+    var(--c2); /* second color */
+  background-position: 0 0,var(--s) var(--s);
+  background-size: calc(2*var(--s)) calc(2*var(--s));
+}
+}
+      
+        body {
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            position: absolute;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+      h1 {
+    font-size: 200px;
+}
+
+      
+    </style>
+</head>
+<body>
+    <button id="clickButton">Click Me!</button>
+
+    <script>
+        const button = document.getElementById('clickButton');
+
+        function getRandomPosition() {
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            return { x, y };
+        }
+
+        button.addEventListener('click', () => {
+            const position = getRandomPosition();
+            button.style.left = `${position.x}px`;
+            button.style.top = `${position.y}px`;
+        });
+    </script>
+</body>
+</html>
