@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pointless Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+    <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -16,6 +16,44 @@
                 },
             },
         }
+
+    </script>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
+
+body {
+    background-color: #100015; /* Dark purple, near black */
+    color: #ffffff; /* White text for contrast */
+    font-family: 'Bytesized', sans-serif; /* Bytesized font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+h1 {
+    font-size: 60px !important; /* Force 60px font size */
+    margin-bottom: 40px; /* Space below */
+    text-align: center; /* Center text */
+}
+
+button {
+    background-color: #6a0dad; /* Purple button */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #520b9b; /* Slightly darker purple on hover */
+}
 
     </style>
 </head>
@@ -34,7 +72,11 @@
             }
         });
     </script>
-    <div class="text-center space-y-4">
+
+    <h1>
+        Pointless Projects
+    </h1>
+<div class="text-center space-y-4">    
         <a href="button-random/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
             Button Random
         </a>
@@ -53,6 +95,8 @@
         <a href="miniontranslator/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
             Minion Translator
         </a>
+  
+  <footer class="fixed bottom-0 right-0 left-0">&copy; GGsuii99 2025</footer>
     </div>
 </body>
 </html>
