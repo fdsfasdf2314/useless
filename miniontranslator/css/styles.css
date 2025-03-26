@@ -9,7 +9,7 @@ body {
     height: 100%;
     padding: 0;
     color: #596066;
-    font-family:"Open Sans";
+    font-family: "Raleway", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
 }
@@ -26,9 +26,9 @@ a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-transform:rotate(180deg);
-    -ms-transform:rotate(180deg);
-    transform:rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 #rminion {
     position: absolute;
@@ -60,8 +60,6 @@ a:hover {
     position: relative;
     left: 0;
     right: 0;
-    /*top: 20px;*/
-    /*right: 0;*/
     float: left;
 }
 #like {
@@ -76,16 +74,15 @@ button.btn {
     height: 54px;
     border: #d0d6dc solid 2px;
     color: #596066;
+    font-family: "Raleway", sans-serif;
 }
 button.btn:hover, button.btn:focus {
     outline: none;
     border: rgb(158,164,170) solid 2px;
 }
-
 button:focus {
     outline: none;
 }
-
 footer {
     position: absolute;
     bottom: 0;
@@ -101,7 +98,7 @@ footer h4 {
     font-weight: 600;
 }
 footer small {
-    color: #d0d6dc;;
+    color: #d0d6dc;
 }
 .tut {
     margin: 0 10px;
@@ -110,6 +107,7 @@ footer small {
 .try {
     margin: 4px auto;
     width: 80%;
+    font-family: "Raleway", sans-serif;
 }
 .try h3 {
     padding: 10px 4px;
@@ -122,6 +120,7 @@ footer small {
     border-radius: 10px;
     font-weight: lighter;
     font-size: 24px;
+    font-family: "Raleway", sans-serif;
 }
 .nixfocus:focus {
     outline: none;
@@ -190,8 +189,8 @@ hr {
         border-radius: 0;
         font-size: 2em;
     }
-    button.btn:hover,button.btn:focus {
-        outline:none;
+    button.btn:hover, button.btn:focus {
+        outline: none;
         border: none;
         background: #fefcec;
         color: #596066;
@@ -219,9 +218,7 @@ hr {
         padding: 0;
         width: 100%;
         text-align: center;
-        /*border-bottom: #596066 solid 10px;*/
     }
-
     #output {
         top: 0;
         margin-bottom: 40px;
