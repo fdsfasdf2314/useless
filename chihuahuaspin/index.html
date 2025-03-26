@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chihuahua Spin</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#5D5CDE',
+          },
+          animation: {
+            'bounce-slow': 'bounce 2s infinite',
+          }
+        }
+      }
+    }
+
+    // Check for dark mode preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+    
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      if (event.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
+  </script>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+  <div class="max-w-md w-full mx-auto flex flex-col items-center">
+    <h1 class="text-3xl font-bold mb-8 text-gray-800 dark:text-white">Chihuahua Spin</h1>
+    
+    <div class="relative w-48 md:w-64 mb-8">
+      <img src="https://theuselessweb.site/chihuahuaspin/spin.gif" alt="Spinning Chihuahua" class="w-full rounded-full shadow-lg">
+      <div id="ethan" class="absolute top-3 right-1 w-20 bg-gray-200 dark:bg-gray-700 text-primary p-2 rounded-md text-center font-bold shadow-md hidden transition-opacity duration-300">
+        Much spin!
+      </div>
+    </div>
+    
+    <div class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4 animate-bounce-slow">
+      You have sat through <span id="spin" class="text-primary font-bold">0 spins</span>!
+    </div>
+    
+    <div class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+      Watch the spinning chihuahua and see what happens...
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      var spins = 0;
+      setInterval(function() {
+        spins = spins + 1;
+        $("#spin").text(spins + " spin" + (spins != 1 ? "s" : ""));
+        
+        if (spins == 10) {
+          $("#ethan").removeClass("hidden").addClass("block");
+        } else if (spins == 17) {
+          $("#ethan").removeClass("block").addClass("hidden");
+        }
+      }, 4205);
+    });
+  </script>
+</body>
+</html>
