@@ -16,10 +16,44 @@
                 },
             },
         }
-
     </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
+        
+        body {
+            background-color: #100015;
+            color: #ffffff;
+            font-family: 'Bytesized', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 60px !important;
+            margin-bottom: 20px;
+        }
+        .scrollable-buttons {
+            flex-grow: 1;
+            overflow-y: auto;
+            width: 100%;
+            padding: 10px;
+            max-height: calc(100vh - 140px);
+        }
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
       <style>
-@keyframes move {
+      @keyframes move {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
     }
@@ -499,63 +533,10 @@
     box-shadow: 28vmin 0 3.729782057767525vmin currentColor;
 }
 
-
       </style>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
-
-body {
-    background-color: #100015; /* Dark purple, near black */
-    color: #ffffff; /* White text for contrast */
-    font-family: 'Bytesized', sans-serif; /* Bytesized font */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    text-align: center;
-}
-h1 {
-    font-size: 60px !important; /* Force 60px font size */
-    margin-bottom: 40px; /* Space below */
-    text-align: center; /* Center text */
-}
-
-button {
-    background-color: #6a0dad; /* Purple button */
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-button:hover {
-    background-color: #520b9b; /* Slightly darker purple on hover */
-}
-
-    </style>
 </head>
-<body >
-    <!-- Dark mode setup -->
-    <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-        
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        });
-    </script>
-
+<body>
+  
   <div class="background">
    <span></span>
    <span></span>
@@ -609,42 +590,18 @@ button:hover {
    <span></span>
 </div>
   
-    <h1>
-        Pointless Projects
-    </h1>
-  
-  
-  
-<div class="text-center space-y-4">    
-        <a href="button-random/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-            Button Random
-        </a>
-        <a href="eelslap/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-            Eel Slap
-        </a>
-        <a href="rgb/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-            Rrrgggbbb
-        </a>
-        <a href="cat-bounce/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-            Cat bounce
-        </a>
-        <a href="potato-or-tomato/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-            Potato Or Tomato
-        </a>
-        <a href="miniontranslator/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-            Minion Translator
-        </a>
-    <a href="mondrian-and-me/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-Mondrian and me
-        </a>
-      <a href="smashthewalls/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-Smash the walls
-        </a>
-        <a href="highest/index.html" target="_blank" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-md">
-Worlds highest website
-        </a>
-  
-  <footer class="fixed bottom-0 right-0 left-0">&copy; GGsuii99 2025</footer>
+    <h1>Pointless Projects</h1>
+    <div class="scrollable-buttons space-y-4">
+        <a href="button-random/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Button Random</a>
+        <a href="eelslap/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Eel Slap</a>
+        <a href="rgb/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Rrrgggbbb</a>
+        <a href="cat-bounce/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Cat Bounce</a>
+        <a href="potato-or-tomato/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Potato Or Tomato</a>
+        <a href="miniontranslator/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Minion Translator</a>
+        <a href="mondrian-and-me/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Mondrian and Me</a>
+        <a href="smashthewalls/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">Smash the Walls</a>
+        <a href="highest/index.html" class="block w-64 mx-auto px-6 py-3 bg-primary text-white font-medium text-lg rounded-md hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md">World's Highest Website</a>
     </div>
+    <footer>&copy; GGsuii99 2025</footer>
 </body>
 </html>
