@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pointless Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <style>
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -17,21 +17,7 @@
             },
         }
 
-        html {
-  --s: 86px; /* control the size*/
-  --c1: #76bb40;
-  --c2: #00a1d8;
-  
-  --c:var(--c1) 0;
-  --g:conic-gradient(at 50% 25%,#0000 75%,var(--c));
-  background:
-    repeating-linear-gradient(#0000 0 48%,var(--c) 50%),var(--g),
-    conic-gradient(#0000 75%,var(--c)) calc(var(--s)/4) calc(var(--s)/2),
-    var(--g) calc(var(--s)/2) var(--s) var(--c2);
-  background-size: var(--s) var(--s),var(--s) calc(2*var(--s));
-}
-
-    </script>
+    </style>
 </head>
 <body class="bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center transition-colors duration-200">
     <!-- Dark mode setup -->
