@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Video Player</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        video {
+            width: auto;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <video id="videoPlayer" playsinline muted autoplay></video>
+    
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoFiles = [
+            'videos/1.mp4', 'videos/2.mp4', 'videos/3.mp4', 'videos/4.mp4', 'videos/5.mp4',
+            'videos/6.mp4', 'videos/7.mp4', 'videos/8.mp4', 'videos/9.mp4', 'videos/10.mp4',
+            'videos/11.mp4', 'videos/12.mp4', 'videos/13.mp4', 'videos/14.mp4', 'videos/15.mp4',
+            'videos/16.mp4', 'videos/17.mp4', 'videos/18.mp4', 'videos/19.mp4', 'videos/20.mp4',
+            'videos/21.mp4', 'videos/22.mp4'
+        ];
+        let currentIndex = 0;
+
+        function playNextVideo() {
+            videoPlayer.src = videoFiles[currentIndex];
+            videoPlayer.load();
+            videoPlayer.play().catch(() => {});
+            currentIndex = (currentIndex + 1) % videoFiles.length;
+        }
+
+        videoPlayer.addEventListener('ended', playNextVideo);
+        
+        document.body.addEventListener('click', () => {
+            videoPlayer.muted = false; 
+            if (videoPlayer.paused) {
+                playNextVideo();
+            }
+        }, { once: true });
+
+        playNextVideo();
+    </script>
+</body>
+</html>
