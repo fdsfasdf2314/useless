@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Video Player</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        video {
+            width: auto;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <video id="videoPlayer" playsinline autoplay></video>
+    
+    <script>
+        async function fetchVideos() {
+            try {
+                const response = await fetch('videos/');
+                const data = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const links = [...doc.querySelectorAll('a')]
+                    .map(a => a.href)
+                    .filter(href => href.endsWith('.mp4'));
+                return links;
+            } catch (error) {
+                console.error('Error fetching video files:', error);
+                return [];
+            }
+        }
+
+        async function initPlayer() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoFiles = await fetchVideos();
+            let currentIndex = 0;
+
+            function playNextVideo() {
+                if (videoFiles.length > 0) {
+                    videoPlayer.src = videoFiles[currentIndex];
+                    videoPlayer.play();
+                    currentIndex = (currentIndex + 1) % videoFiles.length;
+                }
+            }
+
+            videoPlayer.addEventListener('ended', playNextVideo);
+            playNextVideo();
+        }
+
+        initPlayer();
+    </script>
+</body>
+</html>
